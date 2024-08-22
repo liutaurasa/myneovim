@@ -6,9 +6,10 @@ vim.cmd("set number")
 vim.g.mapleader = " "
 
 require("config.lazy")
+require("config.options")
 
 -- setup must be called before loading
-require("config.catppuccin")
+-- require("config.catppuccin")
 vim.cmd.colorscheme "catppuccin"
 -- vim.api.nvim_command 'colorscheme highlite-solarized8-high'
 
