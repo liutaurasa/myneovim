@@ -2,7 +2,11 @@ return (
     {
         'rebelot/terminal.nvim',
         config = function()
-            require("terminal").setup()
+            require("terminal").setup({
+                -- layout = { open_cmd = "tab" },
+                -- cmd = { vim.o.shell },
+                -- autoclose = false
+            })
             local term_map = require("terminal.mappings")
             vim.keymap.set({ "n", "x" }, "<leader>ts", term_map.operator_send, { expr = true })
             vim.keymap.set("n", "<leader>to", term_map.toggle)
@@ -17,6 +21,7 @@ return (
             vim.keymap.set("n", "<leader>th", term_map.move({ open_cmd = "belowright new" }))
             vim.keymap.set("n", "<leader>tH", term_map.move({ open_cmd = "botright new" }))
             vim.keymap.set("n", "<leader>tf", term_map.move({ open_cmd = "float" }))
-        end
+        end,
+        enabled = false,
     }
 )
