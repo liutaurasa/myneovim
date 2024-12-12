@@ -10,6 +10,7 @@ return {
 	config = function()
         require("neo-tree").setup({
             close_if_last_window = true,
+            symlink_target = true
         })
 		-- vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
         vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree toggle=true<CR>', {noremap = true, silent = true})
