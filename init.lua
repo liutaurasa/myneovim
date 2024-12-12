@@ -18,17 +18,11 @@ require("config.options")
 vim.cmd.colorscheme "catppuccin"
 -- vim.api.nvim_command 'colorscheme highlite-solarized8-high'
 
--- Ident-blankline pluging
-local highlight = {
-    "CursorColumn",
-    "Whitespace",
-}
-require("ibl").setup {
-    indent = { highlight = highlight, char = "" },
-    whitespace = {
-        highlight = highlight,
-        remove_blankline_trail = false,
-    },
-    scope = { enabled = false },
-}
-
+-- Ansible vars and lists
+vim.api.nvim_set_keymap('i', '<C-g>h', '"{{  }}"<Left><Left><left><left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-g>j', "['']<Left><left>", { noremap = true })
+vim.api.nvim_set_keymap('i', '"', '""<left>', { noremap = true })
+vim.api.nvim_set_keymap('i', "'", "''<left>", { noremap = true })
+vim.api.nvim_set_keymap('i', '(', '()<left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '[', '[]<left>', { noremap = true })
+vim.api.nvim_set_keymap('i', '{', '{}<left>', { noremap = true })
