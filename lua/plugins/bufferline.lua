@@ -5,8 +5,7 @@ return {
         dependencies = "nvim-tree/nvim-web-devicons",
         enabled = true,
         config = function()
-            local bufferline = require("bufferline")
-            bufferline.setup{
+            require("bufferline").setup({
                 options = {
                     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
                     close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -173,7 +172,7 @@ return {
                       bg = { attribute = "bg", highlight = "Normal" },
                     },
                 }
-            }
+            })
             vim.keymap.set('n', '<C-tab>', ':BufferLineCycleNext', {})
             vim.keymap.set('n', '<C-Shift-tab>', ':BufferLineCyclePrev', {})
         end
