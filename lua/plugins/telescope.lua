@@ -47,13 +47,6 @@ return {
                     }
                 },
             })
-            local builtin = require("telescope.builtin")
-            vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
-            vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-            vim.keymap.set('n', '<leader>fs', require("telescope").extensions.live_grep_args.live_grep_args, { noremap = true })
-            vim.keymap.set("n", "<leader>gs", builtin.grep_string, {})
-            vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
-            vim.keymap.set("n", "<C-b>", builtin.buffers, {})
             telescope.load_extension("ui-select")
             telescope.load_extension("live_grep_args")
         end,
