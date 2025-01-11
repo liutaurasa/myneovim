@@ -3,6 +3,8 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set expandtab")
 vim.cmd("set number")
+vim.cmd("set shell=bash\\ -l")
+-- vim.cmd("set shellcmdflag=-i")
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
