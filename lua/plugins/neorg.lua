@@ -11,6 +11,7 @@ return {
                     config = {
                         workspaces = {
                             notes = "~/Neorg",
+                            cheats = "~/Neorg/CheatSheets"
                         },
                         default_workspace = "notes",
                     },
@@ -18,6 +19,6 @@ return {
             },
         }
         vim.wo.foldlevel = 99
-        vim.wo.conceallevel = 2
+        vim.wo.conceallevel = 3
     end,
 }
