@@ -17,14 +17,14 @@ require("config.options")
 
 -- setup must be called before loading
 -- require("config.catppuccin")
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme("catppuccin")
 -- vim.api.nvim_command 'colorscheme highlite-solarized8-high'
 
 -- Ansible vars and lists
-vim.api.nvim_set_keymap('i', '<C-g>h', '"{{  }}"<Left><Left><left><left>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<C-g>j', "['']<Left><left>", { noremap = true })
-vim.api.nvim_set_keymap('i', '"', '""<left>', { noremap = true })
-vim.api.nvim_set_keymap('i', "'", "''<left>", { noremap = true })
-vim.api.nvim_set_keymap('i', '(', '()<left>', { noremap = true })
-vim.api.nvim_set_keymap('i', '[', '[]<left>', { noremap = true })
-vim.api.nvim_set_keymap('i', '{', '{}<left>', { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-g>h", '"{{  }}"<Left><Left><left><left>', { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-g>j", "['']<Left><left>", { noremap = true })
+vim.api.nvim_set_keymap("i", '"', '""<left>', { noremap = true })
+vim.api.nvim_set_keymap("i", "'", "''<left>", { noremap = true })
+vim.api.nvim_set_keymap("i", "(", "()<left>", { noremap = true })
+vim.api.nvim_set_keymap("i", "[", "[]<left>", { noremap = true })
+vim.api.nvim_set_keymap("i", "{", "{}<left>", { noremap = true })
