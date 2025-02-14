@@ -3,3 +3,5 @@
 -- Add any additional options here
 -- Set to false to disable auto format
 vim.g.autoformat = true
+
+vim.opt.shell = "bash -l"
