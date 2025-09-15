@@ -8,3 +8,11 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.cmd("autocmd BufNewFile,BufRead *.yaml,*.yml set filetype=yaml.ansible")
+
+-- Disable autoformat for lua files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "lua" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
