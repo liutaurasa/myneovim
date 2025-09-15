@@ -11,4 +11,3 @@ map("n", "<C-M-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-M-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
-
