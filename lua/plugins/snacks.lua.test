@@ -1,0 +1,105 @@
+return {
+  "folke/snacks.nvim",
+  opts = {
+    -- =============== 🌲 Explorer (side panel) ===============
+    explorer = {
+      enable = true,
+      layout = {
+        box = "vertical",
+        { win = "list", border = "rounded" },
+        -- Explorer **cannot float previews**
+        -- Preview is always inside the panel box
+      },
+      files = { hidden = true }, -- show dotfiles
+      auto_close = false,        -- keep it open until you close it
+      backdrop = false,          -- dim background behind explorer
+    },
+
+    -- =============== 🔍 Pickers (floating finder UIs) ===============
+    picker = {
+      enable = true,
+      layout = {
+        cycle = true, -- allow cycling between sections
+      },
+      sources = {
+        -- Example: file formatting in picker
+        formatters = {
+          file = {
+            filename_first = false,
+            truncate = 100,
+            filename_only = false,
+            icon_width = 2,
+          },
+        },
+
+        -- Picker that mimics Explorer, but with floating preview
+        explorer = {
+          enable = true,
+          auto_close = false,
+          backdrop = true, -- dimmed background
+          layout = {
+            layout = {
+              position = "left",
+              width = 40,
+              box = "horizontal",
+              {
+                box = "vertical",
+                { win = "input", border = "rounded", height = 1 },
+                { win = "list",  border = "rounded" },
+              },
+              {
+                win = "preview",
+                relative = "editor", -- FLOATS
+                width = 0.6,
+                height = 0.6,
+                row = 0.5,
+                col = 0.5,
+                border = "rounded",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  -- =============== 🎹 Keymaps ===============
+  keys = {
+    -- Open Snacks Explorer as a side panel
+    -- {
+    --   "<leader>e",
+    --   function() require("snacks").explorer() end,
+    --   desc = "Snacks Explorer (side panel)",
+    -- },
+
+    -- Floating picker with preview (Shift+P)
+    {
+      "<S-p>",
+      function()
+        require("snacks").picker.files({
+          layout = {
+            layout = {
+              box = "horizontal",
+              {
+                box = "vertical",
+                { win = "list", border = "rounded" },
+              },
+              {
+                win = "preview",
+                relative = "editor", -- FLOATING PREVIEW
+                width = 0.6,
+                height = 0.6,
+                row = 0.5,
+                col = 0.5,
+                border = "rounded",
+              },
+            },
+          },
+          files = { hidden = true },
+        })
+      end,
+      desc = "Snacks Picker (floating preview)",
+    },
+  },
+}
+
